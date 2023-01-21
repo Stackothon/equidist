@@ -45591,28 +45591,41 @@ if (false) {} else {
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-const react_wrapper_1 = __webpack_require__(/*! @googlemaps/react-wrapper */ "./node_modules/@googlemaps/react-wrapper/dist/index.umd.js");
-const mapComponent_1 = __webpack_require__(/*! ../features/mapComponent/mapComponent */ "./client/features/mapComponent/mapComponent.tsx");
-const render = (status) => {
-    if (status === react_wrapper_1.Status.LOADING)
-        return React.createElement("h3", null,
-            status,
-            " ..");
-    if (status === react_wrapper_1.Status.FAILURE)
-        return React.createElement("h3", null,
-            status,
-            " ...");
-    return React.createElement("h3", null, status);
-};
+const Navbar_1 = __webpack_require__(/*! ../features/navbar/Navbar */ "./client/features/navbar/Navbar.tsx");
+const AppRoutes_1 = __webpack_require__(/*! ./AppRoutes */ "./client/app/AppRoutes.tsx");
 const App = () => {
-    var _a;
-    const key = (_a = {"MANPATH":"/opt/homebrew/share/man:/usr/share/man:/usr/local/share/man:/opt/homebrew/share/man::","TERM_PROGRAM":"vscode","NODE":"/usr/local/bin/node","INIT_CWD":"/Users/eddiefahrenheit/Desktop/equidist","SHELL":"/bin/zsh","TERM":"xterm-256color","npm_config_metrics_registry":"https://registry.npmjs.org/","TMPDIR":"/var/folders/br/dvv6c2_x2sb5sr4krhdft3qc0000gn/T/","HOMEBREW_REPOSITORY":"/opt/homebrew","npm_config_global_prefix":"/usr/local","TERM_PROGRAM_VERSION":"1.74.3","ZDOTDIR":"/Users/eddiefahrenheit","ORIGINAL_XDG_CURRENT_DESKTOP":"undefined","MallocNanoZone":"0","COLOR":"1","TERM_SESSION_ID":"w0t0p0:2C7BEC1A-CC87-4E4A-BF2C-53176F76CD09","npm_config_noproxy":"","npm_config_local_prefix":"/Users/eddiefahrenheit/Desktop/equidist","USER":"eddiefahrenheit","COMMAND_MODE":"unix2003","npm_config_globalconfig":"/usr/local/etc/npmrc","SSH_AUTH_SOCK":"/private/tmp/com.apple.launchd.SLzxmq91l1/Listeners","__CF_USER_TEXT_ENCODING":"0x1F5:0x0:0x0","npm_execpath":"/usr/local/lib/node_modules/npm/bin/npm-cli.js","PATH":"/Users/eddiefahrenheit/Desktop/equidist/node_modules/.bin:/Users/eddiefahrenheit/Desktop/node_modules/.bin:/Users/eddiefahrenheit/node_modules/.bin:/Users/node_modules/.bin:/node_modules/.bin:/usr/local/lib/node_modules/npm/node_modules/@npmcli/run-script/lib/node-gyp-bin:/Users/eddiefahrenheit/Desktop/equidist/node_modules/.bin:/Users/eddiefahrenheit/Desktop/node_modules/.bin:/Users/eddiefahrenheit/node_modules/.bin:/Users/node_modules/.bin:/node_modules/.bin:/usr/local/lib/node_modules/npm/node_modules/@npmcli/run-script/lib/node-gyp-bin:/Users/eddiefahrenheit/Desktop/equidist/node_modules/.bin:/Users/eddiefahrenheit/Desktop/node_modules/.bin:/Users/eddiefahrenheit/node_modules/.bin:/Users/node_modules/.bin:/node_modules/.bin:/usr/local/lib/node_modules/npm/node_modules/@npmcli/run-script/lib/node-gyp-bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin:/opt/homebrew/sbin","npm_package_json":"/Users/eddiefahrenheit/Desktop/equidist/package.json","_":"/Users/eddiefahrenheit/Desktop/equidist/node_modules/.bin/webpack","npm_config_userconfig":"/Users/eddiefahrenheit/.npmrc","npm_config_init_module":"/Users/eddiefahrenheit/.npm-init.js","USER_ZDOTDIR":"/Users/eddiefahrenheit","__CFBundleIdentifier":"com.microsoft.VSCode","npm_command":"run-script","PWD":"/Users/eddiefahrenheit/Desktop/equidist","npm_lifecycle_event":"build","EDITOR":"vi","npm_package_name":"equidist","LANG":"en_US.UTF-8","ITERM_PROFILE":"Default","VSCODE_GIT_ASKPASS_EXTRA_ARGS":"--ms-enable-electron-run-as-node","XPC_FLAGS":"0x0","npm_config_node_gyp":"/usr/local/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js","npm_package_version":"1.0.0","XPC_SERVICE_NAME":"0","VSCODE_INJECTION":"1","COLORFGBG":"7;0","HOME":"/Users/eddiefahrenheit","SHLVL":"6","VSCODE_GIT_ASKPASS_MAIN":"/Users/eddiefahrenheit/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass-main.js","LC_TERMINAL_VERSION":"3.4.19","HOMEBREW_PREFIX":"/opt/homebrew","ITERM_SESSION_ID":"w0t0p0:2C7BEC1A-CC87-4E4A-BF2C-53176F76CD09","npm_config_cache":"/Users/eddiefahrenheit/.npm","LOGNAME":"eddiefahrenheit","npm_lifecycle_script":"webpack","VSCODE_GIT_IPC_HANDLE":"/var/folders/br/dvv6c2_x2sb5sr4krhdft3qc0000gn/T/vscode-git-1a96a01c08.sock","npm_config_user_agent":"npm/8.19.3 node/v18.13.0 darwin arm64 workspaces/false","VSCODE_GIT_ASKPASS_NODE":"/Users/eddiefahrenheit/Downloads/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper","GIT_ASKPASS":"/Users/eddiefahrenheit/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass.sh","HOMEBREW_CELLAR":"/opt/homebrew/Cellar","INFOPATH":"/opt/homebrew/share/info:/opt/homebrew/share/info:","LC_TERMINAL":"iTerm2","npm_node_execpath":"/usr/local/bin/node","npm_config_prefix":"/usr/local","COLORTERM":"truecolor","key":"AIzaSyBcoY5oUn5G0aeUAG1xsMrY5vMvw25uzHc"}.key) !== null && _a !== void 0 ? _a : "";
-    const center = { lat: 40.65382, lng: -73.9747 }; //Prospect Park
-    const zoom = 14;
-    return (React.createElement(react_wrapper_1.Wrapper, { apiKey: key, render: render },
-        React.createElement(mapComponent_1.default, { center: center, zoom: zoom })));
+    return (React.createElement("div", null,
+        React.createElement(Navbar_1.default, null),
+        React.createElement(AppRoutes_1.default, null)));
 };
 exports["default"] = App;
+
+
+/***/ }),
+
+/***/ "./client/app/AppRoutes.tsx":
+/*!**********************************!*\
+  !*** ./client/app/AppRoutes.tsx ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+const react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
+const Home_1 = __webpack_require__(/*! ../features/home/Home */ "./client/features/home/Home.tsx");
+const mapApp_1 = __webpack_require__(/*! ../features/mapApp/mapComponent/mapApp */ "./client/features/mapApp/mapComponent/mapApp.tsx");
+/**
+ * COMPONENT
+ */
+const AppRoutes = () => {
+    return (React.createElement("div", null,
+        React.createElement(react_router_dom_1.Routes, null,
+            React.createElement(react_router_dom_1.Route, { path: "*", element: React.createElement(Home_1.default, null) }),
+            React.createElement(react_router_dom_1.Route, { path: "/map", element: React.createElement(mapApp_1.default, null) }))));
+};
+exports["default"] = AppRoutes;
 
 
 /***/ }),
@@ -45637,10 +45650,68 @@ exports["default"] = store;
 
 /***/ }),
 
-/***/ "./client/features/mapComponent/mapComponent.tsx":
-/*!*******************************************************!*\
-  !*** ./client/features/mapComponent/mapComponent.tsx ***!
-  \*******************************************************/
+/***/ "./client/features/home/Home.tsx":
+/*!***************************************!*\
+  !*** ./client/features/home/Home.tsx ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/**
+ * COMPONENT
+ */
+const Home = () => {
+    return (React.createElement("div", null,
+        React.createElement("h3", null, "Welcome, USER")));
+};
+exports["default"] = Home;
+
+
+/***/ }),
+
+/***/ "./client/features/mapApp/mapComponent/mapApp.tsx":
+/*!********************************************************!*\
+  !*** ./client/features/mapApp/mapComponent/mapApp.tsx ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+const react_wrapper_1 = __webpack_require__(/*! @googlemaps/react-wrapper */ "./node_modules/@googlemaps/react-wrapper/dist/index.umd.js");
+const mapComponent_1 = __webpack_require__(/*! ./mapComponent */ "./client/features/mapApp/mapComponent/mapComponent.tsx");
+const render = (status) => {
+    if (status === react_wrapper_1.Status.LOADING)
+        return React.createElement("h3", null,
+            status,
+            " ..");
+    if (status === react_wrapper_1.Status.FAILURE)
+        return React.createElement("h3", null,
+            status,
+            " ...");
+    return React.createElement("h3", null, status);
+};
+const MapApp = () => {
+    var _a;
+    const key = (_a = {"MANPATH":"/opt/homebrew/share/man:/usr/share/man:/usr/local/share/man:/opt/homebrew/share/man::","TERM_PROGRAM":"vscode","NODE":"/usr/local/bin/node","INIT_CWD":"/Users/eddiefahrenheit/Desktop/equidist","SHELL":"/bin/zsh","TERM":"xterm-256color","npm_config_metrics_registry":"https://registry.npmjs.org/","TMPDIR":"/var/folders/br/dvv6c2_x2sb5sr4krhdft3qc0000gn/T/","HOMEBREW_REPOSITORY":"/opt/homebrew","npm_config_global_prefix":"/usr/local","TERM_PROGRAM_VERSION":"1.74.3","ZDOTDIR":"/Users/eddiefahrenheit","ORIGINAL_XDG_CURRENT_DESKTOP":"undefined","MallocNanoZone":"0","COLOR":"1","TERM_SESSION_ID":"w0t0p0:2C7BEC1A-CC87-4E4A-BF2C-53176F76CD09","npm_config_noproxy":"","npm_config_local_prefix":"/Users/eddiefahrenheit/Desktop/equidist","USER":"eddiefahrenheit","COMMAND_MODE":"unix2003","npm_config_globalconfig":"/usr/local/etc/npmrc","SSH_AUTH_SOCK":"/private/tmp/com.apple.launchd.SLzxmq91l1/Listeners","__CF_USER_TEXT_ENCODING":"0x1F5:0x0:0x0","npm_execpath":"/usr/local/lib/node_modules/npm/bin/npm-cli.js","PATH":"/Users/eddiefahrenheit/Desktop/equidist/node_modules/.bin:/Users/eddiefahrenheit/Desktop/node_modules/.bin:/Users/eddiefahrenheit/node_modules/.bin:/Users/node_modules/.bin:/node_modules/.bin:/usr/local/lib/node_modules/npm/node_modules/@npmcli/run-script/lib/node-gyp-bin:/Users/eddiefahrenheit/Desktop/equidist/node_modules/.bin:/Users/eddiefahrenheit/Desktop/node_modules/.bin:/Users/eddiefahrenheit/node_modules/.bin:/Users/node_modules/.bin:/node_modules/.bin:/usr/local/lib/node_modules/npm/node_modules/@npmcli/run-script/lib/node-gyp-bin:/Users/eddiefahrenheit/Desktop/equidist/node_modules/.bin:/Users/eddiefahrenheit/Desktop/node_modules/.bin:/Users/eddiefahrenheit/node_modules/.bin:/Users/node_modules/.bin:/node_modules/.bin:/usr/local/lib/node_modules/npm/node_modules/@npmcli/run-script/lib/node-gyp-bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/bin:/opt/homebrew/sbin","npm_package_json":"/Users/eddiefahrenheit/Desktop/equidist/package.json","_":"/Users/eddiefahrenheit/Desktop/equidist/node_modules/.bin/webpack","npm_config_userconfig":"/Users/eddiefahrenheit/.npmrc","npm_config_init_module":"/Users/eddiefahrenheit/.npm-init.js","USER_ZDOTDIR":"/Users/eddiefahrenheit","__CFBundleIdentifier":"com.microsoft.VSCode","npm_command":"run-script","PWD":"/Users/eddiefahrenheit/Desktop/equidist","npm_lifecycle_event":"build","EDITOR":"vi","npm_package_name":"equidist","LANG":"en_US.UTF-8","ITERM_PROFILE":"Default","VSCODE_GIT_ASKPASS_EXTRA_ARGS":"--ms-enable-electron-run-as-node","XPC_FLAGS":"0x0","npm_config_node_gyp":"/usr/local/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js","npm_package_version":"1.0.0","XPC_SERVICE_NAME":"0","VSCODE_INJECTION":"1","COLORFGBG":"7;0","HOME":"/Users/eddiefahrenheit","SHLVL":"6","VSCODE_GIT_ASKPASS_MAIN":"/Users/eddiefahrenheit/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass-main.js","LC_TERMINAL_VERSION":"3.4.19","HOMEBREW_PREFIX":"/opt/homebrew","ITERM_SESSION_ID":"w0t0p0:2C7BEC1A-CC87-4E4A-BF2C-53176F76CD09","npm_config_cache":"/Users/eddiefahrenheit/.npm","LOGNAME":"eddiefahrenheit","npm_lifecycle_script":"webpack","VSCODE_GIT_IPC_HANDLE":"/var/folders/br/dvv6c2_x2sb5sr4krhdft3qc0000gn/T/vscode-git-1a96a01c08.sock","npm_config_user_agent":"npm/8.19.3 node/v18.13.0 darwin arm64 workspaces/false","VSCODE_GIT_ASKPASS_NODE":"/Users/eddiefahrenheit/Downloads/Visual Studio Code.app/Contents/Frameworks/Code Helper.app/Contents/MacOS/Code Helper","GIT_ASKPASS":"/Users/eddiefahrenheit/Downloads/Visual Studio Code.app/Contents/Resources/app/extensions/git/dist/askpass.sh","HOMEBREW_CELLAR":"/opt/homebrew/Cellar","INFOPATH":"/opt/homebrew/share/info:/opt/homebrew/share/info:","LC_TERMINAL":"iTerm2","npm_node_execpath":"/usr/local/bin/node","npm_config_prefix":"/usr/local","COLORTERM":"truecolor","key":"AIzaSyBcoY5oUn5G0aeUAG1xsMrY5vMvw25uzHc"}.key) !== null && _a !== void 0 ? _a : "";
+    const center = { lat: 40.65382, lng: -73.9747 }; //Prospect Park
+    const zoom = 14;
+    return (React.createElement(react_wrapper_1.Wrapper, { apiKey: key, render: render },
+        React.createElement(mapComponent_1.default, { center: center, zoom: zoom })));
+};
+exports["default"] = MapApp;
+
+
+/***/ }),
+
+/***/ "./client/features/mapApp/mapComponent/mapComponent.tsx":
+/*!**************************************************************!*\
+  !*** ./client/features/mapApp/mapComponent/mapComponent.tsx ***!
+  \**************************************************************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -45662,6 +45733,33 @@ const MapComponent = ({ center, zoom, }) => {
     return React.createElement("div", { ref: ref, id: "map" });
 };
 exports["default"] = MapComponent;
+
+
+/***/ }),
+
+/***/ "./client/features/navbar/Navbar.tsx":
+/*!*******************************************!*\
+  !*** ./client/features/navbar/Navbar.tsx ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+const react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
+const Navbar = () => {
+    return (React.createElement("div", null,
+        React.createElement("h1", null, "Equidist"),
+        React.createElement("nav", null,
+            React.createElement("h3", null, "LOGO"),
+            React.createElement("button", null,
+                React.createElement(react_router_dom_1.NavLink, { to: "/map" }, "Click Here For Map")),
+            React.createElement("button", null,
+                React.createElement(react_router_dom_1.NavLink, { to: "/home" }, "Click Here for Home"))),
+        React.createElement("hr", null)));
+};
+exports["default"] = Navbar;
 
 
 /***/ }),
