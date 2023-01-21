@@ -1,4 +1,6 @@
 const path = require("path");
+const { DefinePlugin } = require("webpack");
+require("dotenv").config();
 
 module.exports = {
   entry: path.resolve(__dirname, "./client/index.tsx"),
@@ -28,5 +30,6 @@ module.exports = {
   //   "react": "React",
   //   "react-dom": "ReactDOM",
   // },
+  plugins: [new DefinePlugin({ "process.env": JSON.stringify(process.env) })],
   devtool: "source-map",
 };
