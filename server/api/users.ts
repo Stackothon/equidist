@@ -1,10 +1,10 @@
 import { Request, Response } from "express";
 import * as express from "express";
-import { exports } from "../db";
-const { User } = exports;
-const router = express.Router();
+import { dbExports } from "../db";
+const { User } = dbExports;
+export const userRoutes = express.Router();
 
-router.get("/", async (req: Request, res: Response, next) => {
+userRoutes.get("/", async (req: Request, res: Response, next) => {
   try {
     const users = await User.findAll({
       // explicitly select only the id and username fields - even though
@@ -17,5 +17,3 @@ router.get("/", async (req: Request, res: Response, next) => {
     next(err);
   }
 });
-
-export default router;

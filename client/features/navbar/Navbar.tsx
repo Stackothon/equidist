@@ -3,18 +3,36 @@ import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div>
-      <h1>Equidist</h1>
-      <nav>
-        <h3>LOGO</h3>
-        <button>
-          <NavLink to="/map">Click Here For Map</NavLink>
+    <div className="navbar">
+      <div className="navbar-left">
+        <button className="home-btn">
+          <NavLink className="site-name" to="/home">
+            Equidist
+          </NavLink>
         </button>
-        <button>
-          <NavLink to="/home">Click Here for Home</NavLink>
-        </button>
-      </nav>
-      <hr />
+        <nav className="navbar-btns">
+          <button>
+            <NavLink to="/map">Map</NavLink>
+          </button>
+          <button>
+            <NavLink to="/home">Docs</NavLink>
+          </button>
+          <button>
+            <NavLink to="/home">About Us</NavLink>
+          </button>
+        </nav>
+      </div>
+      <div className="navbar-right">
+        <div className="navbar-search">
+          <img src="/img/search.svg" alt="search" />
+          <form autoComplete="off">
+            <input type="text" name="search" placeholder="Search..." />
+          </form>
+        </div>
+        <div className="github-icon">
+          <img src="/img/github-mark-white.svg" alt="" />
+        </div>
+      </div>
     </div>
   );
 };
