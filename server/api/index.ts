@@ -7,7 +7,7 @@ export const router = express.Router();
 router.use("/routes", routesRouter);
 router.use("/places", placesRouter);
 
-routes.use((req: Request, res: Response, next) => {
+router.use((req: Request, res: Response, next) => {
   const error = new Error("Not Found");
   res.status(404);
   next(error);
