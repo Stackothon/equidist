@@ -1,5 +1,6 @@
 import * as React from "react";
 import { NavLink } from "react-router-dom";
+import SearchBar from "./searchBar/searchBar";
 
 const Navbar = () => {
   return (
@@ -10,10 +11,10 @@ const Navbar = () => {
         <button>
           <NavLink to="/map">Click Here For Map</NavLink>
         </button>
-
-        <a href="/api/places">
-          <button>Click Here for api/places</button>
-        </a>
+        <button>
+          <NavLink to="/home">Click Here To Show Current Places</NavLink>
+        </button>
+        <SearchBar />
       </nav>
       <hr />
     </div>

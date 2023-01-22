@@ -17,8 +17,6 @@ const MapApp = () => {
   return (
     <Wrapper apiKey={key} render={render}>
       <MapComponent center={center} zoom={zoom} />
-      {/* <div />
-      </MapComponent> */}
     </Wrapper>
   );
 };
