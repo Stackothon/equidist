@@ -45615,7 +45615,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 const react_router_dom_1 = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
 const Home_1 = __webpack_require__(/*! ../features/home/Home */ "./client/features/home/Home.tsx");
-const mapApp_1 = __webpack_require__(/*! ../features/mapApp/mapComponent/mapApp */ "./client/features/mapApp/mapComponent/mapApp.tsx");
+const mapApp_1 = __webpack_require__(/*! ../features/mapApp/mapApp */ "./client/features/mapApp/mapApp.tsx");
 /**
  * COMPONENT
  */
@@ -45672,10 +45672,10 @@ exports["default"] = Home;
 
 /***/ }),
 
-/***/ "./client/features/mapApp/mapComponent/mapApp.tsx":
-/*!********************************************************!*\
-  !*** ./client/features/mapApp/mapComponent/mapApp.tsx ***!
-  \********************************************************/
+/***/ "./client/features/mapApp/mapApp.tsx":
+/*!*******************************************!*\
+  !*** ./client/features/mapApp/mapApp.tsx ***!
+  \*******************************************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -45683,7 +45683,7 @@ exports["default"] = Home;
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 const react_wrapper_1 = __webpack_require__(/*! @googlemaps/react-wrapper */ "./node_modules/@googlemaps/react-wrapper/dist/index.umd.js");
-const mapComponent_1 = __webpack_require__(/*! ./mapComponent */ "./client/features/mapApp/mapComponent/mapComponent.tsx");
+const mapComponent_1 = __webpack_require__(/*! ./mapComponent/mapComponent */ "./client/features/mapApp/mapComponent/mapComponent.tsx");
 const render = (status) => {
     if (status === react_wrapper_1.Status.LOADING)
         return React.createElement("h3", null,
@@ -45730,7 +45730,8 @@ const MapComponent = ({ center, zoom, }) => {
             }));
         }
     }, [ref, map]);
-    return React.createElement("div", { ref: ref, id: "map" });
+    return (React.createElement(React.Fragment, null,
+        React.createElement("div", { ref: ref, id: "map" })));
 };
 exports["default"] = MapComponent;
 
@@ -45755,8 +45756,8 @@ const Navbar = () => {
             React.createElement("h3", null, "LOGO"),
             React.createElement("button", null,
                 React.createElement(react_router_dom_1.NavLink, { to: "/map" }, "Click Here For Map")),
-            React.createElement("button", null,
-                React.createElement(react_router_dom_1.NavLink, { to: "/home" }, "Click Here for Home"))),
+            React.createElement("a", { href: "/api/places" },
+                React.createElement("button", null, "Click Here for api/places"))),
         React.createElement("hr", null)));
 };
 exports["default"] = Navbar;
