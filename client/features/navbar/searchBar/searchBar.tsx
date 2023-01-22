@@ -11,7 +11,7 @@ const SearchBar = () => {
   const handleKeyPress = (event) => {
     event.preventDefault();
     if (event.keyCode == 13) {
-      navigate("/home");
+      navigate("/places");
       dispatch(getPlaceAsync(event.target.value));
       event.target.value = "";
     }
