@@ -5,10 +5,10 @@ import axios from "axios";
 require("dotenv").config();
 const key = process.env.key;
 
-placesRouter.get("/", async (req: Request, res: Response, next) => {
-  const search = "1903 78th st";
+placesRouter.get("/:search", async (req: Request, res: Response, next) => {
+  const search = req.params.search.split("_").join(" "); //deslugged
   try {
-    const { data } = await axios.post(
+    const { data } = await axios.get(
       "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?" +
         "inputtype=textquery" +
         `&input=${search}` +
@@ -16,7 +16,6 @@ placesRouter.get("/", async (req: Request, res: Response, next) => {
         `&key=${key}`
     );
     if (data.status === "OK") {
-      const place1id = data.candidates[0].place_id;
       res.json(data);
     } else {
       res.sendStatus(404);

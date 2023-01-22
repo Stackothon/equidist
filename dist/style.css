@@ -221,3 +221,26 @@ a {
   background-color: #93d8cb;
   color: #063442;
 }
+
+#search-field {
+  color: #fff;
+}
+
+.MuiFormControl-root {
+  border-radius: 8px;
+}
+
+.MuiFormControl-root label {
+  color: #fff;
+  font-size: 14px;
+}
+.MuiFormControl-root input {
+  border: 1px solid #084b5f;
+  border-radius: 8px;
+  padding: 0.3rem 0;
+}
+
+.MuiFormControl-root:hover {
+  border: 0px solid #084b5f;
+  outline: none;
+}

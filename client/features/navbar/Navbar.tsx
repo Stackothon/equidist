@@ -1,5 +1,6 @@
 import * as React from "react";
 import { NavLink } from "react-router-dom";
+import SearchBar from "./searchBar/searchBar";
 
 const Navbar = () => {
   return (
@@ -23,12 +24,7 @@ const Navbar = () => {
         </nav>
       </div>
       <div className="navbar-right">
-        <div className="navbar-search">
-          <img src="/img/search.svg" alt="search" />
-          <form autoComplete="off">
-            <input type="text" name="search" placeholder="Search..." />
-          </form>
-        </div>
+        <SearchBar />
         <div className="github-icon">
           <img src="/img/github-mark-white.svg" alt="" />
         </div>
