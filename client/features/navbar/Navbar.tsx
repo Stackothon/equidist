@@ -10,9 +10,10 @@ const Navbar = () => {
         <button>
           <NavLink to="/map">Click Here For Map</NavLink>
         </button>
-        <button>
-          <NavLink to="/home">Click Here for Home</NavLink>
-        </button>
+
+        <a href="/api/places">
+          <button>Click Here for api/places</button>
+        </a>
       </nav>
       <hr />
     </div>
