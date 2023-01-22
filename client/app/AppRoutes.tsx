@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "../features/home/Home";
-import MapApp from "../features/mapApp/mapComponent/mapApp";
+import MapApp from "../features/mapApp/mapApp";
 
 /**
  * COMPONENT

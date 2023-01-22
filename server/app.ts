@@ -2,8 +2,8 @@ import * as path from "path";
 import { Application, Request, Response, ErrorRequestHandler } from "express";
 import * as express from "express";
 import * as morgan from "morgan";
-import { routes } from "./api/index";
 const app: Application = express();
+import { router } from "./api/index";
 export default app;
 
 // logging middleware
@@ -13,7 +13,7 @@ app.use(morgan("dev"));
 app.use(express.json());
 
 // api routes
-app.use("/api", routes);
+app.use("/api", router);
 
 app.get("/", (req: Request, res: Response) =>
   res.sendFile(path.join(__dirname, "..", "dist/index.html"))

@@ -1,9 +1,11 @@
 import { Request, Response } from "express";
 import * as express from "express";
-import { userRoutes } from "./users";
-export const routes = express.Router();
+import { placesRouter } from "./places";
+import { routesRouter } from "./routes";
+export const router = express.Router();
 
-routes.use("/users", userRoutes);
+router.use("/routes", routesRouter);
+router.use("/places", placesRouter);
 
 routes.use((req: Request, res: Response, next) => {
   const error = new Error("Not Found");

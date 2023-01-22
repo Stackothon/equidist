@@ -1,7 +1,7 @@
 import * as React from "react";
 import { ReactElement } from "react";
 import { Wrapper, Status } from "@googlemaps/react-wrapper";
-import MapComponent from "./mapComponent";
+import MapComponent from "./mapComponent/mapComponent";
 
 const render = (status: Status): ReactElement => {
   if (status === Status.LOADING) return <h3>{status} ..</h3>;
@@ -17,6 +17,8 @@ const MapApp = () => {
   return (
     <Wrapper apiKey={key} render={render}>
       <MapComponent center={center} zoom={zoom} />
+      {/* <div />
+      </MapComponent> */}
     </Wrapper>
   );
 };
