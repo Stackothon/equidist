@@ -15,9 +15,9 @@ import User from "./models/User";
 //   });
 // };
 
-export const exports = {
+export const dbExports = {
   db,
   User,
 };
 
-export default db;
+export default dbExports;

@@ -4,19 +4,31 @@ import SearchBar from "./searchBar/searchBar";
 
 const Navbar = () => {
   return (
-    <div>
-      <h1>Equidist</h1>
-      <nav>
-        <h3>LOGO</h3>
-        <button>
-          <NavLink to="/map">Click Here For Map</NavLink>
+    <div className="navbar">
+      <div className="navbar-left">
+        <button className="home-btn">
+          <NavLink className="site-name" to="/home">
+            Equidist
+          </NavLink>
         </button>
-        <button>
-          <NavLink to="/home">Click Here To Show Current Places</NavLink>
-        </button>
+        <nav className="navbar-btns">
+          <button>
+            <NavLink to="/map">Map</NavLink>
+          </button>
+          <button>
+            <NavLink to="/home">Docs</NavLink>
+          </button>
+          <button>
+            <NavLink to="/home">About Us</NavLink>
+          </button>
+        </nav>
+      </div>
+      <div className="navbar-right">
         <SearchBar />
-      </nav>
-      <hr />
+        <div className="github-icon">
+          <img src="/img/github-mark-white.svg" alt="" />
+        </div>
+      </div>
     </div>
   );
 };

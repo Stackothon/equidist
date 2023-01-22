@@ -18,7 +18,7 @@ const SearchBar = () => {
   };
 
   return (
-    <FormControl>
+    <FormControl sx={{ color: "#fff" }}>
       <TextField
         required
         id="search-field"
